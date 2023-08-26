@@ -9,6 +9,7 @@ builder.Services.AddControllersWithViews();
 
 
 builder.Services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
+builder.Services.AddScoped<IArticuloRepositorio, ArticuloRepositorio>();
 
 
 

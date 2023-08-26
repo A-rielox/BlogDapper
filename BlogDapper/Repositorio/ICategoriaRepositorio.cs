@@ -13,5 +13,5 @@ public interface ICategoriaRepositorio
 
     //Método especial para el dropdown con la lista de categorías en la vista artículos,
     //se debe crear aquí para invocarse desde el controlador artículos
-    //IEnumerable<SelectListItem> GetListaCategorias();
+    IEnumerable<SelectListItem> GetListaCategorias();
 }

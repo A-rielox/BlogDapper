@@ -1,0 +1,35 @@
+﻿@model IEnumerable<BlogDapper.Models.Articulo>
+
+@{
+    ViewData["Title"] = "Lista de Artículos";
+}
+
+
+<div class="row">
+    <div class="col-9">
+        <h1>Administrador de Artículos</h1>
+    </div>
+    <div class="col-3">
+        <a asp-action="Crear" class="btn btn-primary float-end"><i class="bi bi-plus-square"></i> Agregar Artículo</a>
+    </div>
+</div>
+
+<div class="card bg-light p-3">
+    <table class="table" id="tblArticulos">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Título</th>
+                <th>Imagen</th>
+                <th>Estado</th>
+                <th>Categoría</th>
+                <th>Fecha de Creación</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section Scripts{
+    <script src="~/js/articulos.js"></script>
+}

@@ -35,3 +35,9 @@ public class Articulo
     //public List<Etiqueta> Etiqueta { get; set; }
 }
 
+// la relacion uno a muchos
+// aca
+// public virtual Categoria Categoria { get; set; }
+
+// en categoria
+// public List<Articulo> Articulo { get; set; }
