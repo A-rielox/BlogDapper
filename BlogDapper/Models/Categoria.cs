@@ -12,5 +12,5 @@ public class Categoria
     public DateTime FechaCreacion { get; set; }
 
     //Esta indica la relación con artículo, donde una categoría puede tener muchos artículos
-    //public List<Articulo> Articulo { get; set; }
+    public List<Articulo> Articulo { get; set; }
 }
