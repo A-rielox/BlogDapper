@@ -53,8 +53,9 @@ public class ArticulosController : Controller
     {
         if (ModelState.IsValid)
         {
-            string rutaPrincipal = _hostingEnvironment.WebRootPath;
+            string rutaPrincipal = _hostingEnvironment.WebRootPath; // acceso a carpeta wwwroot
             var archivos = HttpContext.Request.Form.Files;
+
             if (articulo.IdArticulo == 0)
             {
                 //Nuevo artículo
@@ -71,6 +72,7 @@ public class ArticulosController : Controller
                 _repoArticulo.CrearArticulo(articulo);
                 return RedirectToAction(nameof(Index));
             }
+
             //Esta línea valida el modelo si es "false" retorna a la vista crear pero del GET, o sea al formulario               
             return RedirectToAction(nameof(Crear));
         }
@@ -89,12 +91,13 @@ public class ArticulosController : Controller
         }
 
         var articulo = _repoArticulo.GetArticulo(id.GetValueOrDefault());
+
         if (articulo == null)
         {
             return NotFound();
         }
 
-        //ViewBag.SelectList = _repoCategoria.GetListaCategorias();
+        ViewBag.SelectList = _repoCategoria.GetListaCategorias();
         return View(articulo);
     }
 
@@ -202,8 +205,8 @@ public class ArticulosController : Controller
     [HttpGet]
     public IActionResult GetArticulos()
     {
-        return Json(new { data = _repoArticulo.GetArticulos() });
-        //return Json(new { data = _repoArticulo.GetArticuloCategoria() });
+        //return Json(new { data = _repoArticulo.GetArticulos() });
+        return Json(new { data = _repoArticulo.GetArticuloCategoria() });
     }
 
     [HttpDelete]

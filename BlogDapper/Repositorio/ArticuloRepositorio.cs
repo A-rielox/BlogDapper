@@ -96,6 +96,7 @@ public class ArticuloRepositorio : IArticuloRepositorio
         var articulo = _bd.Query<Articulo, Categoria, Articulo>(sql, (a, c) =>
         {
             a.Categoria = c;
+
             return a;
         }, splitOn: "CategoriaId");
 

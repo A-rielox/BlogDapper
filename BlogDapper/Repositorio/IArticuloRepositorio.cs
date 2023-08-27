@@ -11,6 +11,6 @@ public interface IArticuloRepositorio
     void BorrarArticulo(int id);
 
     //Se agregar nuevo método para obtener la relación entre artículo y categoria
-    //List<Articulo> GetArticuloCategoria();
+    List<Articulo> GetArticuloCategoria();
 
 }

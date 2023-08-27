@@ -16,4 +16,8 @@
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\imagenes\articulos\" />
+  </ItemGroup>
+
 </Project>
