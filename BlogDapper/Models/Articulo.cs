@@ -31,7 +31,8 @@ public class Articulo
     //Esta indica la relación con categoría de que un artículo debe pertenecer a uno sola categoría
     public virtual Categoria Categoria { get; set; }
 
-    //public List<Comentario> Comentario { get; set; }
+    public List<Comentario> Comentario { get; set; }
+
     //public List<Etiqueta> Etiqueta { get; set; }
 }
 

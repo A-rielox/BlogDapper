@@ -205,7 +205,6 @@ public class ArticulosController : Controller
     [HttpGet]
     public IActionResult GetArticulos()
     {
-        //return Json(new { data = _repoArticulo.GetArticulos() });
         return Json(new { data = _repoArticulo.GetArticuloCategoria() });
     }
 
