@@ -122,17 +122,17 @@ public class EtiquetaRepositorio : IEtiquetaRepositorio
 
     //////////////////////////////////////////
     /////////////////////////////////////////////
-    //public ArticuloEtiquetas AsignarEtiquetas(ArticuloEtiquetas articuloEtiquetas)
-    //{
-    //    var sql = "INSERT INTO ArticuloEtiquetas( IdArticulo, IdEtiqueta ) " +
-    //              "VALUES( @IdArticulo, @IdEtiqueta );";
-        
-    //    _bd.Execute(sql, new
-    //    {
-    //        articuloEtiquetas.IdArticulo,
-    //        articuloEtiquetas.IdEtiqueta
-    //    });
+    public ArticuloEtiquetas AsignarEtiquetas(ArticuloEtiquetas articuloEtiquetas)
+    {
+        var sql = "INSERT INTO ArticuloEtiquetas( IdArticulo, IdEtiqueta ) " +
+                  "VALUES( @IdArticulo, @IdEtiqueta );";
 
-    //    return articuloEtiquetas;
-    //}
+        _bd.Execute(sql, new
+        {
+            articuloEtiquetas.IdArticulo,
+            articuloEtiquetas.IdEtiqueta
+        });
+
+        return articuloEtiquetas;
+    }
 }

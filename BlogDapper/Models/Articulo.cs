@@ -4,9 +4,10 @@ namespace BlogDapper.Models;
 
 public class Articulo
 {
-    //public Articulo() {
-    //    Etiqueta = new List<Etiqueta>();
-    //}
+    public Articulo()
+    {
+        Etiqueta = new List<Etiqueta>();
+    }
 
     [Key]
     public int IdArticulo { get; set; }

@@ -11,18 +11,18 @@ public class ArticulosController : Controller
 {
     private readonly ICategoriaRepositorio _repoCategoria;
     private readonly IArticuloRepositorio _repoArticulo;
-    //private readonly IEtiquetaRepositorio _repoEtiqueta;
+    private readonly IEtiquetaRepositorio _repoEtiqueta;
     private readonly IWebHostEnvironment _hostingEnvironment;
 
     public ArticulosController(ICategoriaRepositorio repoCategoria,
                                IArticuloRepositorio repoArticulo,
-                               //IEtiquetaRepositorio repoEtiqueta,
+                               IEtiquetaRepositorio repoEtiqueta,
                                IWebHostEnvironment hostingEnvironment)
     {
         _repoCategoria = repoCategoria;
         _repoArticulo = repoArticulo;
         _hostingEnvironment = hostingEnvironment;
-        //_repoEtiqueta = repoEtiqueta;
+        _repoEtiqueta = repoEtiqueta;
     }
 
 
@@ -156,46 +156,49 @@ public class ArticulosController : Controller
     //////////////////////////////////////////
     /////////////////////////////////////////////
     //Para la parte de asignar etiquetas a un artículo
-    //[HttpGet]
-    //public IActionResult AsignarEtiquetas(int? id)
-    //{
-    //    if (id == null)
-    //    {
-    //        return NotFound();
-    //    }
+    [HttpGet]
+    public IActionResult AsignarEtiquetas(int? id)
+    {
+        if (id == null)
+        {
+            return NotFound();
+        }
 
-    //    var articulo = _repoArticulo.GetArticulo(id.GetValueOrDefault());
-    //    if (articulo == null)
-    //    {
-    //        return NotFound();
-    //    }
+        var articulo = _repoArticulo.GetArticulo(id.GetValueOrDefault());
 
-    //    ViewBag.SelectList = _repoEtiqueta.GetListaEtiquetas();
-    //    return View(articulo);
-    //}
+        if (articulo == null)
+        {
+            return NotFound();
+        }
+
+        ViewBag.SelectList = _repoEtiqueta.GetListaEtiquetas();
+
+        return View(articulo);
+    }
 
 
-    //////////////////////////////////////////
-    /////////////////////////////////////////////
-    //[HttpPost]
-    //[ValidateAntiForgeryToken]
-    //public IActionResult AsignarEtiquetaArticulo(int IdArticulo, int IdEtiqueta)
-    //{
-    //    if (IdArticulo == 0 || IdEtiqueta == 0)
-    //    {
-    //        ViewBag.SelectList = _repoEtiqueta.GetListaEtiquetas();
-    //        return View();
-    //    }
-    //    else
-    //    {
-    //        ArticuloEtiquetas artiEtiquetas = new ArticuloEtiquetas();
-    //        artiEtiquetas.IdArticulo = IdArticulo;
-    //        artiEtiquetas.IdEtiqueta = IdEtiqueta;
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult AsignarEtiquetaArticulo(int IdArticulo, int IdEtiqueta)
+    {
+        if (IdArticulo == 0 || IdEtiqueta == 0)
+        {
+            ViewBag.SelectList = _repoEtiqueta.GetListaEtiquetas();
 
-    //        _repoEtiqueta.AsignarEtiquetas(artiEtiquetas);
-    //        return RedirectToAction(nameof(Index));
-    //    }
-    //}
+            return View();
+        }
+        else
+        {
+            ArticuloEtiquetas artiEtiquetas = new ArticuloEtiquetas();
+
+            artiEtiquetas.IdArticulo = IdArticulo;
+            artiEtiquetas.IdEtiqueta = IdEtiqueta;
+
+            _repoEtiqueta.AsignarEtiquetas(artiEtiquetas);
+
+            return RedirectToAction(nameof(Index));
+        }
+    }
 
 
 

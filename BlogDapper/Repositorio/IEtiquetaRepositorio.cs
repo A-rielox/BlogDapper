@@ -11,15 +11,16 @@ public interface IEtiquetaRepositorio
     Etiqueta ActualizarEtiqueta(Etiqueta etiqueta);
     void BorrarEtiqueta(int id);
 
-    //Método especial para el dropdown con la lista de etiquetas en artículo
+    // Método especial para el dropdown con la lista de etiquetas en artículo
     IEnumerable<SelectListItem> GetListaEtiquetas();
 
-    //Método especial para la acción de asignar etiquetas
+    // Método especial para la acción de asignar etiquetas
 
 
-    //Método especial para obtener los articulos con las etiquetas asignadas
+    // Método especial para obtener los articulos con las etiquetas asignadas
     List<Articulo> GetArticuloEtiquetas();
 
-    //Método especial para la acción de asignar etiquetas
-    //ArticuloEtiquetas AsignarEtiquetas(ArticuloEtiquetas etiqueta);
+
+    // Método especial para la acción de asignar etiquetas
+    ArticuloEtiquetas AsignarEtiquetas(ArticuloEtiquetas etiqueta);
 }
