@@ -33,7 +33,7 @@ public class Articulo
 
     public List<Comentario> Comentario { get; set; }
 
-    //public List<Etiqueta> Etiqueta { get; set; }
+    public List<Etiqueta> Etiqueta { get; set; }
 }
 
 // la relacion uno a muchos
