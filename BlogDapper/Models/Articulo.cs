@@ -27,7 +27,7 @@ public class Articulo
     public int CategoriaId { get; set; }
 
 
-
+    // ESTOS NO SE MAPEAN ( NO ESTAN EN DB ) ES SOLO PA METERLOS EN LAS RESPUESTAS Q MANDO AL FRONT
     //Esta indica la relación con categoría de que un artículo debe pertenecer a uno sola categoría
     public virtual Categoria Categoria { get; set; }
 

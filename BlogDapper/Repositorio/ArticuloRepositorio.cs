@@ -23,7 +23,7 @@ public class ArticuloRepositorio : IArticuloRepositorio
     {
         var sql = "UPDATE Articulo " +
                   "SET Titulo = @Titulo, Descripcion = @Descripcion, " +
-                    "Imagen = @Imagen, Estado = @Estado, CategoriaId = @CategoriaId " +
+                      "Imagen = @Imagen, Estado = @Estado, CategoriaId = @CategoriaId " +
                   "WHERE IdArticulo = @IdArticulo";
 
         _bd.Execute(sql, articulo);
@@ -86,6 +86,9 @@ public class ArticuloRepositorio : IArticuloRepositorio
 
     //////////////////////////////////////////
     /////////////////////////////////////////////
+    ///
+    ///         un articulo una categoria
+    ///         
     public List<Articulo> GetArticuloCategoria()
     {
         var sql = "SELECT a.*, c.Nombre " +

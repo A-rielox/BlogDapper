@@ -11,6 +11,8 @@ public class Categoria
     public string Nombre { get; set; }
     public DateTime FechaCreacion { get; set; }
 
+
+    // SOLO PARA ESPECIFICAR RELACION
     //Esta indica la relación con artículo, donde una categoría puede tener muchos artículos
     public List<Articulo> Articulo { get; set; }
 }

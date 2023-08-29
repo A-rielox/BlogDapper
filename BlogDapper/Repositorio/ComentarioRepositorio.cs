@@ -81,7 +81,8 @@ public class ComentarioRepositorio : IComentarioRepositorio
 
     //////////////////////////////////////////
     /////////////////////////////////////////////
-    //Obtener comentario con artículo (Relación de uno a muchos)
+    // Obtener comentario con artículo (Relación de uno a muchos)
+    // en este caso un-comentario-un-articulo
     public List<Comentario> GetComentarioArticulo()
     {
         var sql = "SELECT c.*, a.Titulo " +

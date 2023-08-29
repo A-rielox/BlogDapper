@@ -98,7 +98,10 @@ public class EtiquetaRepositorio : IEtiquetaRepositorio
 
     //////////////////////////////////////////
     /////////////////////////////////////////////
-    //Obtener la lista de artículos con etiquetas
+    // Obtener la lista de artículos con etiquetas
+    //
+    //                                               relacion many-to-many 
+    // aca un articulo muchas etiquetas
     public List<Articulo> GetArticuloEtiquetas()
     {
         var sql = @"SELECT p.IdArticulo, Titulo, t.IdEtiqueta, NombreEtiqueta

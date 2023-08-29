@@ -19,6 +19,9 @@ public class Comentario
     //Llave foránea
     public int ArticuloId { get; set; }
 
+
+
+    // SOLO PARA ESPECIFICAR RELACION
     //Esta indica la relación con Articulo de que un Comentario debe pertenecer a un solo Articulo
     public virtual Articulo Articulo { get; set; }
 
