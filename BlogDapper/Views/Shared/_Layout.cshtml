@@ -27,10 +27,11 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="Front" asp-controller="Inicio" asp-action="Index">Home</a>
                         </li>
 
                         <li class="nav-item">
@@ -53,6 +54,28 @@
                             <a class="nav-link text-dark" asp-area="Admin" asp-controller="Etiquetas" asp-action="GetArticuloConEtiquetas">Articulo Con Etiquetas</a>
                         </li>
                     </ul>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <form class="form-check-inline" asp-area="Front" asp-controller="Accesos" asp-action="Salir">
+                                    <button type="submit" class="nav-link btn btn-link"><i class="fas fa-sign-out-alt"></i> Salir</button>
+                                </form>
+                            </li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul class="navbar-nav mx200-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="Front" asp-controller="Accesos" asp-action="Acceso"> Acceso</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="Front" asp-controller="Accesos" asp-action="Registro"> Registrarse</a>
+                            </li>
+                        </ul>
+                    }
                 </div>
             </div>
         </nav>
